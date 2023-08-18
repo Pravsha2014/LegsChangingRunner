@@ -1,14 +1,13 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ToolChanger : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _tools;
     [SerializeField] private ParticleSystem _fogParticle;
 
     private Tool _currentTool;
 
-    public event UnityAction<float> ToolChanged;
+    public event Action<float> ToolChanged;
 
     private void Start()
     {
@@ -26,11 +25,8 @@ public class ToolChanger : MonoBehaviour
         if (tool != _currentTool)
         {
             DisableCurrentTool();
-
             tool.gameObject.SetActive(true);
-
             _currentTool = tool;
-
             ToolChanged?.Invoke(_currentTool.MaxAngularVelocity);
         }
     }

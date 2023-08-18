@@ -17,7 +17,7 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent<Axe>(out _))
+        if (other.gameObject.GetComponentInParent<Axe>() != null)
         {
             _boxCollider.enabled = false;
             

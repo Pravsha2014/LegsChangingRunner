@@ -1,13 +1,20 @@
-using System;
 using UnityEngine;
 
 public class Water : MonoBehaviour
 {
     [SerializeField] private float _floatingForce;
-    [SerializeField] private ParticleSystem _splashParticles;
+    
+    private ParticleSystem _splashParticles;
+
+    private void Start()
+    {
+        _splashParticles = GetComponentInChildren<ParticleSystem>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
+
         if (other.TryGetComponent<Rigidbody>(out _))
         {
             _splashParticles.transform.position = new(_splashParticles.transform.position.x,

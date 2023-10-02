@@ -4,22 +4,24 @@ using UnityEngine;
 [RequireComponent(typeof(TMP_Text))]
 public class WalletText : MonoBehaviour
 {
-    [SerializeField] private Wallet _wallet;
+    [SerializeField] private GameObject _playerSpawner;
 
     private TMP_Text _text;
+    private Wallet _wallet;
 
     private void Start()
     {
+        _wallet = _playerSpawner.GetComponentInChildren<Wallet>();
         _text = GetComponent<TMP_Text>();
-        _wallet.ValueChanged += ChangeValue;
+        _wallet.ValueChanged += ShowCurrentValue;
     }
 
     private void OnDisable()
     {
-        _wallet.ValueChanged -= ChangeValue;
+        _wallet.ValueChanged -= ShowCurrentValue;
     }
 
-    private void ChangeValue(int value)
+    private void ShowCurrentValue(int value)
     {
         _text.text = value.ToString();
     }

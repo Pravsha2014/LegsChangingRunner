@@ -13,8 +13,6 @@ public class Water : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
-
         if (other.TryGetComponent<Rigidbody>(out _))
         {
             _splashParticles.transform.position = new(_splashParticles.transform.position.x,

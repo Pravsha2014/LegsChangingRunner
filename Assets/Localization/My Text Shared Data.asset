@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: My Text Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: My Text
+  m_TableCollectionNameGuidString: 5221227414d4cf141a6773acc7cc4f3d
+  m_Entries:
+  - m_Id: 3312289902592
+    m_Key: SampleScene/Canvas/SettingsPanel/UISettings/SettingsText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4095274184704
+    m_Key: SampleScene/Canvas/SettingsPanel/UISettings/Panel/Volume/VolumeText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4614155726848
+    m_Key: SampleScene/Canvas/SettingsPanel/UISettings/Panel/Languages/LanguageText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5148069654528
+    m_Key: SampleScene/Canvas/SettingsPanel/UISettings/Panel/Buttons/MainMenuButton/MainMenuButtonText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5226184372224
+    m_Key: SampleScene/Canvas/SettingsPanel/UISettings/Panel/Buttons/ExitButton/ExitButtonText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5699251531776
+    m_Key: SampleScene/Canvas/ShopPanel/AddCoinButton/CoinBalanceText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5761901850624
+    m_Key: SampleScene/Canvas/ShopPanel/ShopText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16279752470528
+    m_Key: SampleScene/Canvas/FinishPanel/NextLevelButton/NextLevelButtonText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16461013512192
+    m_Key: SampleScene/Canvas/FinishPanel/MainMenuButton/MainMenuButtonText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16525647736832
+    m_Key: SampleScene/Canvas/FinishPanel/ShopButton/ShopButtonText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16587626967040
+    m_Key: SampleScene/Canvas/FinishPanel/FinishText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20947341733888
+    m_Key: SampleScene/Canvas/MainMenuPanel/PlayButton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20964597100544
+    m_Key: SampleScene/Canvas/MainMenuPanel/ShopButton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20995370708992
+    m_Key: SampleScene/Canvas/MainMenuPanel/SettingsButton/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1490428320608256
+    m_Key: SampleScene/Canvas/GamePanel/Money/MoneyText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3788352991850496
+    m_Key: SampleScene/Canvas/ShopPanel/Scroll View/Viewport/Content/HorizontalLayoutGroup/Item/Text
+      (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3788448731033600
+    m_Key: SampleScene/Canvas/ShopPanel/Scroll View/Viewport/Content/HorizontalLayoutGroup/Item
+      (1)/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3788486941143040
+    m_Key: SampleScene/Canvas/ShopPanel/Scroll View/Viewport/Content/HorizontalLayoutGroup
+      (1)/Item/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3788543388086272
+    m_Key: SampleScene/Canvas/ShopPanel/Scroll View/Viewport/Content/HorizontalLayoutGroup
+      (1)/Item (1)/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3788569627652096
+    m_Key: SampleScene/Canvas/ShopPanel/Scroll View/Viewport/Content/HorizontalLayoutGroup
+      (2)/Item/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3788586941739008
+    m_Key: SampleScene/Canvas/ShopPanel/Scroll View/Viewport/Content/HorizontalLayoutGroup
+      (2)/Item (1)/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3788611830738944
+    m_Key: SampleScene/Canvas/ShopPanel/Scroll View/Viewport/Content/HorizontalLayoutGroup
+      (3)/Item/Text (TMP)
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2565717449962422297
+  references:
+    version: 2
+    RefIds:
+    - rid: 2565717449962422297
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1695232773312

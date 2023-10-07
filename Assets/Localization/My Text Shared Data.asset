@@ -110,6 +110,14 @@ MonoBehaviour:
       (3)/Item/Text (TMP)
     m_Metadata:
       m_Items: []
+  - m_Id: 4645705307975680
+    m_Key: SampleScene/Canvas/ShopPanel/AddCoinButton/BalanceText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5657483584270336
+    m_Key: Item/Canvas (Environment)/Item/SellButton/BuyText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -1,20 +1,27 @@
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Player))]
 public class Wallet : MonoBehaviour
 {
+    private readonly string _coins = "Coin";
     private Player _player;
 
-    public event UnityAction<int> ValueChanged;
+    public event Action ValueChanged;
 
     public int Amount { get; private set; } = 0;
 
+    private void Awake()
+    {
+        if(PlayerPrefs.HasKey(_coins) == false)
+            PlayerPrefs.SetInt(_coins, 0);
+    }
+
     private void Start()
     {
-        ValueChanged?.Invoke(Amount);
-
         _player = GetComponent<Player>();
+        Amount = PlayerPrefs.GetInt(_coins);
+        ValueChanged?.Invoke();
 
         _player.CoinTaken += AddCoin;
     }
@@ -22,16 +29,23 @@ public class Wallet : MonoBehaviour
     private void OnDisable()
     {
         _player.CoinTaken -= AddCoin;
+
     }
 
-    public void BuyItem(Item item)
+    public void TakeAwayCoins(int price)
     {
-        Amount -= item.Price;
+        Amount -= price;
+        ValueChanged?.Invoke();
+    }
+
+    public void SaveMoney()
+    {
+        PlayerPrefs.SetInt(_coins, Amount);
     }
 
     private void AddCoin()
     {
         Amount++;
-        ValueChanged?.Invoke(Amount);
+        ValueChanged?.Invoke();
     }
 }

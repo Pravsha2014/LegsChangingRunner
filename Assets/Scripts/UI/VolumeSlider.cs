@@ -1,10 +1,11 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
 public class VolumeSlider : MonoBehaviour
 {
+    [SerializeField] private AudioSource _audioSource;
+
     private readonly float _volumeOffValue = 0f;
     private float _volumeBeforeSoundOff;
     private Slider _slider;
@@ -12,6 +13,7 @@ public class VolumeSlider : MonoBehaviour
     private void Start()
     {
         _slider = GetComponent<Slider>();
+        _slider.value = _audioSource.volume;
     }
 
     public void SwitchValue()
@@ -27,8 +29,6 @@ public class VolumeSlider : MonoBehaviour
         }
     }
 
-    private bool IsSoundOn()
-    {
-        return _slider.value > _volumeOffValue;
-    }
+    private bool IsSoundOn() => _slider.value > _volumeOffValue;
+    
 }

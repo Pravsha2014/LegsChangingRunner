@@ -6,7 +6,7 @@ public class ToolChanger : MonoBehaviour
     private ParticleSystem _fogParticle;
     private Tool _currentTool;
 
-    public event Action<float> ToolChanged;
+    public event Action<float> Changed;
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class ToolChanger : MonoBehaviour
             DisableCurrentTool();
             tool.gameObject.SetActive(true);
             _currentTool = tool;
-            ToolChanged?.Invoke(_currentTool.MaxAngularVelocity);
+            Changed?.Invoke(_currentTool.MaxAngularVelocity);
         }
     }
 

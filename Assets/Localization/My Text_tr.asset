@@ -106,6 +106,10 @@ MonoBehaviour:
     m_Localized: Domuz
     m_Metadata:
       m_Items: []
+  - m_Id: 5657483584270336
+    m_Localized: Almak
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

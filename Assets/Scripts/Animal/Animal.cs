@@ -3,20 +3,22 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(ToolChanger))]
 public abstract class Animal : MonoBehaviour
 {
-    private Rigidbody _rigidbody;
     protected ToolChanger toolChanger;
+    protected Skin currentSkin;
+    private Rigidbody _rigidbody;
 
-    private void Start()
+    private void OnEnable()
     {
         _rigidbody = GetComponent<Rigidbody>();
         toolChanger = GetComponent<ToolChanger>();
+        currentSkin = GetComponentInChildren<Skin>();
 
-        toolChanger.ToolChanged += SetMaxAngularDrag;
+        toolChanger.Changed += SetMaxAngularDrag;
     }
 
     private void OnDisable()
     {
-        toolChanger.ToolChanged -= SetMaxAngularDrag;
+        toolChanger.Changed -= SetMaxAngularDrag;
     }
 
     private void SetMaxAngularDrag(float maxAngularVelocity)

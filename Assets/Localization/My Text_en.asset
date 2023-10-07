@@ -106,6 +106,14 @@ MonoBehaviour:
     m_Localized: Pig
     m_Metadata:
       m_Items: []
+  - m_Id: 4645705307975680
+    m_Localized: New Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5657483584270336
+    m_Localized: Buy
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

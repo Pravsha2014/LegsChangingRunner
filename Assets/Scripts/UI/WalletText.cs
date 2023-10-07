@@ -9,11 +9,12 @@ public class WalletText : MonoBehaviour
     private TMP_Text _text;
     private Wallet _wallet;
 
-    private void Start()
+    private void OnEnable()
     {
         _wallet = _playerSpawner.GetComponentInChildren<Wallet>();
         _text = GetComponent<TMP_Text>();
         _wallet.ValueChanged += ShowCurrentValue;
+        ShowCurrentValue();
     }
 
     private void OnDisable()
@@ -21,8 +22,8 @@ public class WalletText : MonoBehaviour
         _wallet.ValueChanged -= ShowCurrentValue;
     }
 
-    private void ShowCurrentValue(int value)
+    private void ShowCurrentValue()
     {
-        _text.text = value.ToString();
+        _text.text = _wallet.Amount.ToString();
     }
 }

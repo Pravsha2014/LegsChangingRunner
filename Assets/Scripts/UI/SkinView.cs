@@ -8,6 +8,8 @@ public class SkinView : MonoBehaviour
     [SerializeField] private Button _button;
     [SerializeField] private TMP_Text _price;
     [SerializeField] private Image _icon;
+    [SerializeField] private Image _coinIcon;
+    [SerializeField] private Sprite _checkMark;
 
     private Skin _skin;
 
@@ -18,16 +20,10 @@ public class SkinView : MonoBehaviour
         _button.onClick.AddListener(OnButtonClick);
     }
 
-    private void Start()
-    {
-        _button = GetComponentInChildren<Button>();
-        _price = GetComponentInChildren<TMP_Text>();
-        _icon = GetComponentInChildren<Image>();
-    }
-
     private void OnDisable()
     {
         _button.onClick.RemoveListener(OnButtonClick);
+        _skin.OnEquipped -= ChangeButtonLockStatus;
     }
 
     public void Render(Skin skin)
@@ -40,13 +36,24 @@ public class SkinView : MonoBehaviour
         {
             _price.text = skin.Price.ToString();
         }
+        else
+        {
+            ChangeBuyedView();
+            ChangeButtonLockStatus(skin.IsEquipped);
+        }
 
         skin.OnEquipped += ChangeButtonLockStatus;
     }
 
+    public void ChangeBuyedView()
+    {
+        _price.text = string.Empty;
+        _coinIcon.sprite = _checkMark;
+    }
+
     private void ChangeButtonLockStatus(bool isEquipped)
     {
-        _button.interactable = isEquipped;
+        _button.interactable = !isEquipped;
     }
 
     private void OnButtonClick()

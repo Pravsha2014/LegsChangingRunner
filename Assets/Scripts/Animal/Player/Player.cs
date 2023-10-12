@@ -28,5 +28,6 @@ public class Player : Animal
     public void BuySkin(Skin skin)
     {
         _wallet.TakeAwayCoins(skin.Price);
+        skin.Buy();
     }
 }

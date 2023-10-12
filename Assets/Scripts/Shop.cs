@@ -20,16 +20,27 @@ public class Shop : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        for(int i = 0; i < _itemContainer.transform.childCount; i++)
+        {
+            _itemContainer.GetComponentInChildren<SkinView>().OnButtonClicked -= OnSellButtonClicked;
+        }
+    }
+
     private void AddItem(Skin skin)
     {
         var view = Instantiate(_template, _itemContainer.transform);
-        view.OnButtonClicked += OnSellButtonClick;
+        view.OnButtonClicked += OnSellButtonClicked;
         view.Render(skin);
     }
 
-    private void OnSellButtonClick(Skin skin, SkinView view)
+    private void OnSellButtonClicked(Skin skin, SkinView view)
     {
-        TrySellSkin(skin, view);
+        if (skin.IsBuyed)
+            Equip(skin);
+        else
+            TrySellSkin(skin, view);
     }
 
     private void TrySellSkin(Skin skin, SkinView view)
@@ -37,13 +48,11 @@ public class Shop : MonoBehaviour
         if (skin.Price <= _wallet.Amount)
         {
             _player.BuySkin(skin);
-            skin.Buy();
-            view.OnButtonClicked -= OnSellButtonClick;
-            view.OnButtonClicked += Equip;
+            view.ChangeBuyedView();
         }
     }
 
-    private void Equip(Skin skin, SkinView view)
+    private void Equip(Skin skin)
     {
         _player.EquipSkin(skin);
     }

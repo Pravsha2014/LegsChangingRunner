@@ -6,7 +6,7 @@ public class Skin : MonoBehaviour
     [SerializeField] private int _price;
     [SerializeField] private Sprite _icon;
     [SerializeField] private bool _isBuyed = false;
-    
+
     private bool _isEquipped;
 
     public event Action<bool> OnEquipped;
@@ -18,12 +18,14 @@ public class Skin : MonoBehaviour
 
     private void OnEnable()
     {
-        OnEquipped?.Invoke(true);
+        _isEquipped = true;
+        OnEquipped?.Invoke(_isEquipped);
     }
 
     private void OnDisable()
     {
-        OnEquipped?.Invoke(false);
+        _isEquipped = false;
+        OnEquipped?.Invoke(_isEquipped);
     }
 
     public void Buy()

@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Player))]
 public class Wallet : MonoBehaviour
 {
-    private readonly string _coins = "Coin";
+    private readonly string _coinsKey = "Coin";
     private Player _player;
 
     public event Action ValueChanged;
@@ -13,14 +13,14 @@ public class Wallet : MonoBehaviour
 
     private void Awake()
     {
-        if(PlayerPrefs.HasKey(_coins) == false)
-            PlayerPrefs.SetInt(_coins, 0);
+        if(PlayerPrefs.HasKey(_coinsKey) == false)
+            PlayerPrefs.SetInt(_coinsKey, 0);
     }
 
     private void Start()
     {
         _player = GetComponent<Player>();
-        Amount = PlayerPrefs.GetInt(_coins);
+        Amount = PlayerPrefs.GetInt(_coinsKey);
         ValueChanged?.Invoke();
 
         _player.CoinTaken += AddCoin;
@@ -40,7 +40,7 @@ public class Wallet : MonoBehaviour
 
     public void SaveMoney()
     {
-        PlayerPrefs.SetInt(_coins, Amount);
+        PlayerPrefs.SetInt(_coinsKey, Amount);
     }
 
     private void AddCoin()
